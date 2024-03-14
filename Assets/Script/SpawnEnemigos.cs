@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnEnemigos : MonoBehaviour
 {
     public GameObject Enemigo;
-    Vector3[] posiciones;
+    public Vector3[] posiciones;
     float tiempoEntreEnemigosActual;
     float TEE;
 
