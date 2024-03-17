@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
-  - Weapon
+  - Enemigo
+  - PuntoDisparo
+  - Visual
+  - Pistola
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - colisiones
   - 
   - 
   - 
