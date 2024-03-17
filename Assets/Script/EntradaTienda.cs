@@ -10,6 +10,7 @@ public class EntradaTienda : MonoBehaviour
     public Camera camaraTienda;
     public FirstPersonController fpsController;
     public GameObject FPC;
+    bool jugadorDentro;
 
     void Start()
     {
@@ -22,30 +23,41 @@ public class EntradaTienda : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //AudioManager.instance.Pause("Playing");
-            //AudioManager.instance.Play("Shop");
+            if (!jugadorDentro){
+                jugadorDentro = true;
+                //AudioManager.instance.Pause("Playing");
+                //AudioManager.instance.Play("Shop");
 
-            //pausar el juego
-            Time.timeScale = 0;
-            
-            //"desactivar" el jugador
-            fpsController.enabled = false;
+                //pausar el juego
+                Time.timeScale = 0;
+                
+                //"desactivar" el jugador
+                fpsController.enabled = false;
 
-            //desactivar sonido del arma
-            FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = true;
+                //desactivar sonido del arma
+                FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = true;
 
-            Cursor.lockState = CursorLockMode.None; // Desbloquear el cursor del ratón
-            Cursor.visible = true; // Hacer visible el cursor del ratón
-            
+                Cursor.lockState = CursorLockMode.None; // Desbloquear el cursor del ratón
+                Cursor.visible = true; // Hacer visible el cursor del ratón
+                
 
-            //cambiar GUIs
-            Transform guiTransform = gui.transform;
+                //cambiar GUIs
+                Transform guiTransform = gui.transform;
 
-            Transform PlayingGui = guiTransform.Find("GUI Playing");
-            Transform ShopGui = guiTransform.Find("GUI Shop");
+                Transform PlayingGui = guiTransform.Find("GUI Playing");
+                Transform ShopGui = guiTransform.Find("GUI Shop");
 
-            PlayingGui.gameObject.SetActive(false);
-            ShopGui.gameObject.SetActive(true);
+                PlayingGui.gameObject.SetActive(false);
+                ShopGui.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorDentro = false;
         }
     }
 }

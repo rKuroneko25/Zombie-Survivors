@@ -61,7 +61,9 @@ public class BuyButton : MonoBehaviour
 
             FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.SetActive(false);
             PlayerPrefs.SetString("ArmaActual", PlayerPrefs.GetString("ArmaSeleccionada"));
+            PlayerPrefs.SetString("ArmaSeleccionada", "NINGUNA");
             FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.SetActive(true);
+            FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = true;
             audioSource.Play();
         }
     }

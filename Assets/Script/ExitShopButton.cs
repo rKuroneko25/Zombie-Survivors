@@ -24,8 +24,8 @@ public class ExitShopButton : MonoBehaviour
         //"activar" el jugador
         fpsController.enabled = true;
 
-        //activar sonido del arma
-        FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = false;
+        // Esperar 1 segundo para que el sonido del arma no se active antes de que el jugador pueda disparar
+        Invoke("SonidoArma", 1f); 
 
         Cursor.lockState = CursorLockMode.Locked; // Bloquear el cursor del ratón
         Cursor.visible = false; // Hacer invisible el cursor del ratón
@@ -38,5 +38,10 @@ public class ExitShopButton : MonoBehaviour
 
         ShopGui.gameObject.SetActive(false);
         PlayingGui.gameObject.SetActive(true);
+    }
+
+    void SonidoArma()
+    {
+        FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = false;
     }
 }

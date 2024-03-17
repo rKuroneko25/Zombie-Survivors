@@ -17,7 +17,7 @@ public class DisparaBala : MonoBehaviour
     {
         puntoDisparo = GameObject.FindGameObjectWithTag("PuntoDisparo").transform;
 
-        PlayerPrefs.SetString("ArmaActual", "RPG");
+        PlayerPrefs.SetString("ArmaActual", "HANDGUN");
     }   
 
     // Update is called once per frame
