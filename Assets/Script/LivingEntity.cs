@@ -4,7 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using UnityEngine.Events;
 
+[System.Serializable]
+public class GoldEvent : UnityEvent<Vector3> { }
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
@@ -13,6 +16,9 @@ public class LivingEntity : MonoBehaviour, IDamageable
     public float vidaActual; 
 
     public GameObject playerHealth;
+
+    public UnityEvent EnemyExp;
+    public GoldEvent  EnemyGold;
 
     public delegate void onDeathJugador();
     public static event onDeathJugador onDeathPlayer;
@@ -45,6 +51,9 @@ public class LivingEntity : MonoBehaviour, IDamageable
             {
                 onDeathPlayer();
             }
+        } else {
+            EnemyExp.Invoke();
+            EnemyGold.Invoke(transform.position);
         }
         Destroy(gameObject);
     }

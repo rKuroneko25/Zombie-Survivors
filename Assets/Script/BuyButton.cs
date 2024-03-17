@@ -13,7 +13,7 @@ public class BuyButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Oro",6000); ////////////////////////////BORRAR
+        //PlayerPrefs.SetInt("Oro",6000); ////////////////////////////BORRAR
         oro.text = "GOLD: " + PlayerPrefs.GetInt("Oro").ToString();
         gui = GameObject.Find("GUI");
         audioSource = GetComponent<AudioSource>();
@@ -23,41 +23,52 @@ public class BuyButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        Transform guiTransform = gui.transform;
+        Transform ShopGui = guiTransform.Find("GUI Shop");
+        Transform Arma = ShopGui.Find(PlayerPrefs.GetString("ArmaSeleccionada"));
+        Transform Arma_pr = Arma.Find("Pr");
+        bool comprada = false;
+        if (Arma_pr.GetComponent<Text>().text == "FREE!")
+        {
+            comprada = true;
+        }
         switch (PlayerPrefs.GetString("ArmaSeleccionada"))
         {
             case "UZI":
-                ComprarArma(100);
+                ComprarArma(100,comprada);
                 break;
             case "M4":
-                ComprarArma(200);
+                ComprarArma(200,comprada);
                 break;
             case "AK":
-                ComprarArma(300);
+                ComprarArma(300,comprada);
                 break;
             case "SHOTGUN":
-                ComprarArma(400);
+                ComprarArma(400,comprada);
                 break;
             case "GATLING":
-                ComprarArma(500);
+                ComprarArma(500,comprada);
                 break;
             case "RPG":
-                ComprarArma(1000);
+                ComprarArma(1000,comprada);
                 break;
             default:
                 break;
         }
     }
 
-    void ComprarArma(int precio)
+    void ComprarArma(int precio, bool comprada)
     {
-        if (PlayerPrefs.GetInt("Oro") >= precio)
+        if (PlayerPrefs.GetInt("Oro") >= precio || comprada)
         {
-            PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro") - precio);
+            if (!comprada)
+                PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro") - precio);
             oro.text = "GOLD: " + PlayerPrefs.GetInt("Oro").ToString();
             Transform guiTransform = gui.transform;
             Transform ShopGui = guiTransform.Find("GUI Shop");
             Transform Arma = ShopGui.Find(PlayerPrefs.GetString("ArmaSeleccionada"));
-            Destroy(Arma.gameObject);
+            Transform Arma_pr = Arma.Find("Pr");
+            Arma_pr.GetComponent<Text>().text = "FREE!";
 
             FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.SetActive(false);
             PlayerPrefs.SetString("ArmaActual", PlayerPrefs.GetString("ArmaSeleccionada"));

@@ -9,6 +9,8 @@ TagManager:
   - PuntoDisparo
   - Visual
   - Pistola
+  - Disparo1
+  - Gold
   layers:
   - Default
   - TransparentFX

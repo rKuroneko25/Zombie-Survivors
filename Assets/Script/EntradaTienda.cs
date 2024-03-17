@@ -14,7 +14,6 @@ public class EntradaTienda : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetString("ArmaActual", "SHOTGUN"); ////////////////////////////BORRAR
         gui = GameObject.Find("GUI");
         camaraTienda.gameObject.SetActive(false);
     }  
