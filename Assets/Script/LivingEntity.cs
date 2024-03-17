@@ -28,7 +28,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         muerto = false;
         if(gameObject.name == "Player"){
             vidaInicial = 100;
-            playerHealth.GetComponent<TextMeshProUGUI>().text = "HP: "+vidaActual.ToString()+" / "+vidaInicial.ToString();
+            playerHealth.GetComponent<Image>().fillAmount = 1;
         }
         else{
             vidaInicial = PlayerPrefs.GetFloat("VidaEnemigos");
@@ -39,7 +39,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage){
         if(gameObject.name == "Player"){
-            playerHealth.GetComponent<TextMeshProUGUI>().text = "HP: "+(vidaActual-damage*PlayerPrefs.GetFloat("Armor")).ToString()+" / "+vidaInicial.ToString();
+            playerHealth.GetComponent<Image>().fillAmount = (vidaActual-damage*PlayerPrefs.GetFloat("Armor"))/vidaInicial;        
         }
         else{
             transform.GetChild(0).GetComponent<TextMeshPro>().text = "HP: "+(vidaActual-damage).ToString();
@@ -79,7 +79,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
         else{
             vidaActual += health;
         }
-
-        playerHealth.GetComponent<TextMeshProUGUI>().text = "HP: "+vidaActual.ToString()+" / "+vidaInicial.ToString();
+        playerHealth.GetComponent<Image>().fillAmount = vidaActual/vidaInicial;
     }
 }

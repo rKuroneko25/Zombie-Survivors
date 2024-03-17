@@ -10,7 +10,6 @@ public class GiraMonea : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayerPrefs.SetInt("GoldM", 1);
         rotationSpeed = 50f;
     }
 
@@ -25,7 +24,7 @@ public class GiraMonea : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             audioSource.Play();
-            PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro") + 1*PlayerPrefs.GetInt("GoldM"));
+            PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro")*PlayerPrefs.GetInt("GoldM"));
             Invoke("DestruyeMonea", 1f);
         }
     }

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+
 
 public class SpawnEnemigos : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class SpawnEnemigos : MonoBehaviour
     float TEE;
     public GameObject orito;
     int enemies;
+    public GameObject ExpBar;
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +47,9 @@ public class SpawnEnemigos : MonoBehaviour
         }
     }
 
+
     public void Gold(Vector3 enemyPosition){
-        int orogenerado = Random.Range(0, 5);
+        int orogenerado = Random.Range(0, 4);
         for (int i = 0; i < orogenerado; i++)
         {
             Vector3 dispersion = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
@@ -54,6 +59,8 @@ public class SpawnEnemigos : MonoBehaviour
     }
 
     public void Exp(){
-        PlayerPrefs.SetInt("Exp", PlayerPrefs.GetInt("Exp")+1*PlayerPrefs.GetInt("ExpM"));
+        int puntos = Random.Range(1, 4);
+        PlayerPrefs.SetInt("Exp", PlayerPrefs.GetInt("Exp")+puntos*PlayerPrefs.GetInt("ExpM"));
+        ExpBar.GetComponent<UnityEngine.UI.Image>().fillAmount = (float)PlayerPrefs.GetInt("Exp")/(10*PlayerPrefs.GetInt("Ronda"));
     }
 }

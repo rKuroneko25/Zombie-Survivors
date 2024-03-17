@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
     float SpeedM;
     float HeathM;
     float Level;
+
+    public TextMeshProUGUI LevelText;
 
     public GameObject GUIPlaying;
     public GameObject GUIUpgrade;
@@ -18,6 +22,7 @@ public class Upgrades : MonoBehaviour
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
+        PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
         PlayerPrefs.SetInt("GoldM", 1);
@@ -31,6 +36,8 @@ public class Upgrades : MonoBehaviour
         if(PlayerPrefs.GetInt("Exp") >= 10*(Level+1)){
             Level++;
             PlayerPrefs.SetInt("Exp", 0);
+
+            LevelText.text = Level.ToString();
 
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;

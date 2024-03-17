@@ -35,22 +35,22 @@ public class BuyButton : MonoBehaviour
         switch (PlayerPrefs.GetString("ArmaSeleccionada"))
         {
             case "UZI":
-                ComprarArma(100,comprada);
+                ComprarArma(10,comprada);
                 break;
             case "M4":
-                ComprarArma(200,comprada);
+                ComprarArma(25,comprada);
                 break;
             case "AK":
-                ComprarArma(300,comprada);
+                ComprarArma(50,comprada);
                 break;
             case "SHOTGUN":
-                ComprarArma(400,comprada);
+                ComprarArma(100,comprada);
                 break;
             case "GATLING":
-                ComprarArma(500,comprada);
+                ComprarArma(250,comprada);
                 break;
             case "RPG":
-                ComprarArma(1000,comprada);
+                ComprarArma(500,comprada);
                 break;
             default:
                 break;
