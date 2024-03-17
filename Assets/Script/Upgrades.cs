@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class Upgrades : MonoBehaviour
@@ -18,6 +19,7 @@ public class Upgrades : MonoBehaviour
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
+        PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
         PlayerPrefs.SetInt("GoldM", 1);

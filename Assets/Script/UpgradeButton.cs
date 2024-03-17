@@ -1,49 +1,74 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-// using UnityStandardAssets.Characters.FirstPerson;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
-// public class UpgradeButton : MonoBehaviour
-// {
-//     private GameObject gui;
-//     public Camera camaraTienda;
-//     public FirstPersonController fpsController;
-//     public GameObject FPC;
+public class UpgradeButton : MonoBehaviour
+{
+    public GameObject GUIPlaying;
+    public GameObject GUIUpgrade;
+    public GameObject player;
+    public Upgrades upgrades;
+    public Button BTUpgrade;
 
-//     void Start()
-//     {
-//         gui = GameObject.Find("GUI");
-//         Button button = GetComponent<Button>();
-//         button.onClick.AddListener(TaskOnClick);
-//     }  
+    void Start()
+    {
+        Button button = GetComponent<Button>();
+        button.onClick.AddListener(TaskOnClick);
+    }  
 
-//     void TaskOnClick()
-//     {
-//         //reanudar el juego
-//         Time.timeScale = 1;
-            
-//         //"activar" el jugador
-//         fpsController.enabled = true;
+    void TaskOnClick()
+    {
+        Debug.Log("Mejora seleccionada: " + PlayerPrefs.GetString("MejoraSeleccionada"));
+        switch (PlayerPrefs.GetString("MejoraSeleccionada"))
+        {
+            case "SpeedUp":
+                upgrades.Speed();
+                break;
+            case "HealthUp":
+                upgrades.MaxHealth();
+                break;
+            case "DamageUp":
+                upgrades.Damage();
+                break;
+            case "FireRateUp":
+                upgrades.FireRate();
+                break;
+            case "Instakill":
+                upgrades.InstaKill();
+                break;
+            case "MoreGold":
+                upgrades.Gold();
+                break;
+            case "MoreExp":
+                upgrades.Exp();
+                break;
+            case "ArmorUp":
+                upgrades.Armor();
+                break;
+            case "Heal":
+                upgrades.Heal();
+                break;
+            default:
+                break;
+        }
+        BTUpgrade.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        player.GetComponent<FirstPersonController>().enabled = true;
 
-//         // Esperar 1 segundo para que el sonido del arma no se active antes de que el jugador pueda disparar
-//         Invoke("SonidoArma", 1f); 
+        // Esperar 1 segundo para que el sonido del arma no se active antes de que el jugador pueda disparar
+        Invoke("SonidoArma", 1f); 
 
-//         Cursor.lockState = CursorLockMode.Locked; // Bloquear el cursor del ratón
-//         Cursor.visible = false; // Hacer invisible el cursor del ratón
-        
-//         //cambiar GUIs
-//         Transform guiTransform = gui.transform;
+        Cursor.lockState = CursorLockMode.Locked; // Bloquear el cursor del ratón
+        Cursor.visible = false; // Hacer invisible el cursor del ratón
 
-//         Transform PlayingGui = guiTransform.Find("GUI Playing");
-//         Transform UpgGui = guiTransform.Find("GUI Upgrades");
+        GUIPlaying.SetActive(true);
+        GUIUpgrade.SetActive(false);
+    }
 
-//         UpgGui.gameObject.SetActive(false);
-//         PlayingGui.gameObject.SetActive(true);
-//     }
-
-//     void SonidoArma()
-//     {
-//         FPC.transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = false;
-//     }
-// }
+    void SonidoArma()
+    {
+        player.transform.GetChild(0).transform.Find(PlayerPrefs.GetString("ArmaActual")).gameObject.GetComponent<AudioSource>().mute = false;
+    }
+}

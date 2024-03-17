@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GiraMonea : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class GiraMonea : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayerPrefs.SetInt("GoldM", 1);
         rotationSpeed = 50f;
+        Invoke("DestruyeMonea", 10f);
     }
 
 

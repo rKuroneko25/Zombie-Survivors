@@ -15,7 +15,7 @@ public class EntradaTienda : MonoBehaviour
     void Start()
     {
         gui = GameObject.Find("GUI");
-        camaraTienda.gameObject.SetActive(false);
+        //camaraTienda.gameObject.SetActive(false);
     }  
 
     private void OnTriggerEnter(Collider other)

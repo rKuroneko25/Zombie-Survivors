@@ -10,6 +10,7 @@ public class GUIUpgrades : MonoBehaviour
     public Text middleText;
     public Image rightImage;
     public Text rightText;
+    public Button BTUpgrade;
 
     public Dictionary<string, Sprite> diccionarioSprites = new Dictionary<string, Sprite>();
 
@@ -17,6 +18,8 @@ public class GUIUpgrades : MonoBehaviour
 
     void Start()
     {
+        BTUpgrade.gameObject.SetActive(false);
+
         LlenarDiccionarioSprites();
 
         List<string> mejoras = ObtenerMejorasAleatorias();
@@ -54,14 +57,14 @@ public class GUIUpgrades : MonoBehaviour
 
     void LlenarDiccionarioSprites()
     {
-        diccionarioSprites.Add("SpeedUp", Resources.Load<Sprite>("SpeedUpSprite"));
-        diccionarioSprites.Add("HealthUp", Resources.Load<Sprite>("HealthUpSprite"));
-        diccionarioSprites.Add("DamageUp", Resources.Load<Sprite>("DamageUpSprite"));
-        diccionarioSprites.Add("FireRateUp", Resources.Load<Sprite>("FireRateUpSprite"));
-        diccionarioSprites.Add("Instakill", Resources.Load<Sprite>("InstakillSprite"));
-        diccionarioSprites.Add("MoreExp", Resources.Load<Sprite>("MoreExpSprite"));
-        diccionarioSprites.Add("MoreGold", Resources.Load<Sprite>("MoreGoldSprite"));
-        diccionarioSprites.Add("ArmorUp", Resources.Load<Sprite>("ArmorUpSprite"));
-        diccionarioSprites.Add("Heal", Resources.Load<Sprite>("HealSprite"));
+        diccionarioSprites.Add("SpeedUp", Resources.Load<Sprite>("SpeedUp"));
+        diccionarioSprites.Add("HealthUp", Resources.Load<Sprite>("HealthUp"));
+        diccionarioSprites.Add("DamageUp", Resources.Load<Sprite>("DamageUp"));
+        diccionarioSprites.Add("FireRateUp", Resources.Load<Sprite>("FireRateUp"));
+        diccionarioSprites.Add("Instakill", Resources.Load<Sprite>("Instakill"));
+        diccionarioSprites.Add("MoreExp", Resources.Load<Sprite>("MoreExp"));
+        diccionarioSprites.Add("MoreGold", Resources.Load<Sprite>("MoreGold"));
+        diccionarioSprites.Add("ArmorUp", Resources.Load<Sprite>("ArmorUp"));
+        diccionarioSprites.Add("Heal", Resources.Load<Sprite>("Heal"));
     }
 }
