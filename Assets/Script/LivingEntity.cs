@@ -23,8 +23,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
     public delegate void onDeathJugador();
     public static event onDeathJugador onDeathPlayer;
 
-    public UnityEvent EnemyExp;
-
     protected virtual void Start()
     {
         muerto = false;
@@ -65,9 +63,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
             EnemyExp.Invoke();
             EnemyGold.Invoke(transform.position);
         }
-        else{
-            EnemyExp.Invoke();
-        }
+        
         Destroy(gameObject);
     }
 
