@@ -29,7 +29,6 @@ public class NewBehaviourScript : LivingEntity
     protected override void Start()
     {
         base.Start();
-
         JugadorControler.onDeathPlayer += FinalizarJuego;
 
         target = GameObject.FindGameObjectWithTag("Player").transform;

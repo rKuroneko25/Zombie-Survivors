@@ -57,9 +57,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50176024
-  m_Height: 2.5107713
+  m_Height: 11.64265
   m_Direction: 2
-  m_Center: {x: 0.06535848, y: 0.4000001, z: -0.07638981}
+  m_Center: {x: 0.06535848, y: 0.4000001, z: 4.489548}
 --- !u!114 &6850648539937726551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   damage: 1
+  Explosion: {fileID: 0}
 --- !u!1 &5069970850997427442
 GameObject:
   m_ObjectHideFlags: 0

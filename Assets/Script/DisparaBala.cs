@@ -48,6 +48,7 @@ public class DisparaBala : MonoBehaviour
                     fireRate = 1.0f;
                     break;
             }
+            fireRate *= PlayerPrefs.GetFloat("FireRateM");
 
             nextFire = Time.time + fireRate;
 

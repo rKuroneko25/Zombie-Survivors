@@ -21,7 +21,8 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         
+        fireRate *= PlayerPrefs.GetFloat("FireRateM");
+        
         if(Input.GetMouseButton(0)){
             if(Time.time >= nextFire){
                 nextFire = Time.time + fireRate;
