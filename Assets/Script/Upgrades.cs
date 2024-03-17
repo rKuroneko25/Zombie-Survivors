@@ -9,6 +9,9 @@ public class Upgrades : MonoBehaviour
     float HeathM;
     float Level;
 
+    public GameObject GUIPlaying;
+    public GameObject GUIUpgrade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +40,8 @@ public class Upgrades : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            //quito gui playing
-            //pongo gui upgrade
+            GUIPlaying.SetActive(false);
+            GUIUpgrade.SetActive(true);
         }
     }
 

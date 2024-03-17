@@ -443,6 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5434ac40dacb1543839ec1c2bb8618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GUIPlaying: {fileID: 1193790936}
+  GUIUpgrade: {fileID: 0}
   player: {fileID: 371271104}
 --- !u!4 &78439655
 Transform:
