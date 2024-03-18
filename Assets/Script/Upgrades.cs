@@ -71,7 +71,7 @@ public class Upgrades : MonoBehaviour
 
     public void Damage()
     {
-        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")*1.1f);
+        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")*1.2f);
     }
 
     public void FireRate()

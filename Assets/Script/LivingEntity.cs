@@ -69,7 +69,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public void ChangeMaxHealth(float health){
         vidaInicial *= health;
-        playerHealth.GetComponent<TextMeshProUGUI>().text = "HP: "+vidaActual.ToString()+" / "+vidaInicial.ToString();
+        playerHealth.GetComponent<Image>().fillAmount = vidaActual/vidaInicial;
     }
 
     public void ChangeHealth(float health){
