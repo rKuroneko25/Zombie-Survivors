@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
-using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class Upgrades : MonoBehaviour
 
     public GameObject GUIPlaying;
     public GameObject GUIUpgrade;
+    public GUIUpgrades UpgradeTime;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,8 @@ public class Upgrades : MonoBehaviour
             PlayerPrefs.SetInt("Exp", 0);
 
             LevelText.text = Level.ToString();
+
+            UpgradeTime.LevelUp();
 
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;
