@@ -24,8 +24,9 @@ public class EntradaTienda : MonoBehaviour
         {
             if (!jugadorDentro){
                 jugadorDentro = true;
-                //AudioManager.instance.Pause("Playing");
-                //AudioManager.instance.Play("Shop");
+                AudioManager.instance.Play("ShopEnter");
+                AudioManager.instance.Pause("Playing");
+                AudioManager.instance.Play("Shop");
 
                 //pausar el juego
                 Time.timeScale = 0;

@@ -4320,6 +4320,26 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.551
     loop: 0
+  - name: ShopEnter
+    clip: {fileID: 8300000, guid: dad6769d6bac3ea4ba77a03e772b4c0b, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    loop: 0
+  - name: NewUpgrade
+    clip: {fileID: 8300000, guid: 0dfaf8e8c6689ba4d8b1b164bd9c5e57, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    loop: 0
+  - name: Shop
+    clip: {fileID: 8300000, guid: 5a0ae7c77572d794eb6b5b5e8144e14e, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    loop: 1
+  - name: Playing
+    clip: {fileID: 8300000, guid: 7a7645b0a663f244b8c822f910694142, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    loop: 1
 --- !u!4 &1023681926
 Transform:
   m_ObjectHideFlags: 0
