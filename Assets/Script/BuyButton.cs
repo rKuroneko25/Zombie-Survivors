@@ -37,19 +37,19 @@ public class BuyButton : MonoBehaviour
                 ComprarArma(10,comprada);
                 break;
             case "M4":
-                ComprarArma(25,comprada);
+                ComprarArma(75,comprada);
                 break;
             case "AK":
-                ComprarArma(50,comprada);
+                ComprarArma(200,comprada);
                 break;
             case "SHOTGUN":
-                ComprarArma(100,comprada);
+                ComprarArma(1000,comprada);
                 break;
             case "GATLING":
-                ComprarArma(250,comprada);
+                ComprarArma(5000,comprada);
                 break;
             case "RPG":
-                ComprarArma(500,comprada);
+                ComprarArma(10000,comprada);
                 break;
             default:
                 break;

@@ -31,8 +31,10 @@ public class Upgrades : MonoBehaviour
         PlayerPrefs.SetInt("Oro", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetInt("FireRateCap", 1);
-        PlayerPrefs.SetFloat("FireRateM", 1);                  
+        PlayerPrefs.SetFloat("FireRateM", 1);   
+        PlayerPrefs.SetInt("GoldMCap", 1);               
         PlayerPrefs.SetInt("GoldM", 1);
+        PlayerPrefs.SetInt("ExpMCap", 1);
         PlayerPrefs.SetInt("ExpM", 1);
         PlayerPrefs.SetInt("ArmorCap", 1);
         PlayerPrefs.SetFloat("Armor", 1);
@@ -104,11 +106,13 @@ public class Upgrades : MonoBehaviour
 
     public void Gold()
     {
+        PlayerPrefs.SetInt("GoldMCap", PlayerPrefs.GetInt("GoldMCap")+1);
         PlayerPrefs.SetInt("GoldM", PlayerPrefs.GetInt("GoldM")*2);
     }
 
     public void Exp()
     {
+        PlayerPrefs.SetInt("ExpMCap", PlayerPrefs.GetInt("ExpMCap")+1);
         PlayerPrefs.SetInt("ExpM", PlayerPrefs.GetInt("ExpM")*2);
     }
 

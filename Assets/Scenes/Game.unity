@@ -1024,8 +1024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.0084, y: -58.3}
-  m_SizeDelta: {x: 69.5138, y: 24.6938}
+  m_AnchoredPosition: {x: 12.5508, y: -58.3}
+  m_SizeDelta: {x: 80.5986, y: 24.6938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193066520
 MonoBehaviour:
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000 Gold
+  m_Text: 10000 Gold
 --- !u!222 &193066521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4281,96 +4281,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 950839759}
   m_LocalEulerAnglesHint: {x: 0, y: -0.3, z: 0}
---- !u!1 &1023681924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1023681926}
-  - component: {fileID: 1023681925}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1023681925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023681924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad79119e4a757644a82fc07719888a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Explosion
-    clip: {fileID: 8300000, guid: e96e08b7d28455e49bb33b4fdf02c2c9, type: 3}
-    source: {fileID: 0}
-    volume: 0.551
-    loop: 0
-  - name: Damage
-    clip: {fileID: 8300000, guid: 1fb23c5c319c5224b916f4a1eac6cb0c, type: 3}
-    source: {fileID: 0}
-    volume: 0.551
-    loop: 0
-  - name: EnemyHurt
-    clip: {fileID: 8300000, guid: 5e136fb8c09e2e747a4078b8232d5a02, type: 3}
-    source: {fileID: 0}
-    volume: 0.551
-    loop: 0
-  - name: EnemyDeath
-    clip: {fileID: 8300000, guid: 45669c769626b4f4098438bf0856725b, type: 3}
-    source: {fileID: 0}
-    volume: 0.551
-    loop: 0
-  - name: LevelUp
-    clip: {fileID: 8300000, guid: 05cca0afafd75634eb944d7391c13709, type: 3}
-    source: {fileID: 0}
-    volume: 0.519
-    loop: 0
-  - name: ShopEnter
-    clip: {fileID: 8300000, guid: dad6769d6bac3ea4ba77a03e772b4c0b, type: 3}
-    source: {fileID: 0}
-    volume: 0.5
-    loop: 0
-  - name: NewUpgrade
-    clip: {fileID: 8300000, guid: 0dfaf8e8c6689ba4d8b1b164bd9c5e57, type: 3}
-    source: {fileID: 0}
-    volume: 0.5
-    loop: 0
-  - name: Shop
-    clip: {fileID: 8300000, guid: 5a0ae7c77572d794eb6b5b5e8144e14e, type: 3}
-    source: {fileID: 0}
-    volume: 0.5
-    loop: 1
-  - name: Playing
-    clip: {fileID: 8300000, guid: 7a7645b0a663f244b8c822f910694142, type: 3}
-    source: {fileID: 0}
-    volume: 0.5
-    loop: 1
---- !u!4 &1023681926
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023681924}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 173.2274, y: 18.108202, z: 296.43393}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024235190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d8ff8f9649a82e14791d960a0a17f1e4, type: 3}
@@ -9458,7 +9368,6 @@ SceneRoots:
   - {fileID: 212147837}
   - {fileID: 955398249}
   - {fileID: 378072175}
-  - {fileID: 1023681926}
   - {fileID: 78439655}
   - {fileID: 342591877}
   - {fileID: 1668332074}
