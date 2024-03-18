@@ -25,16 +25,19 @@ public class Upgrades : MonoBehaviour
     {
         AudioManager.instance.Play("Playing");
         Level = 0;
-        SpeedM = 1;                                 // Cap 5
-        HeathM = 1;                                 // Sin cap
+        SpeedM = 1;
+        PlayerPrefs.SetInt("SpeedM", 1);
+        HeathM = 1;
         PlayerPrefs.SetString("DesactivaMarcado", "False");
         PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetInt("Oro", 0);
-        PlayerPrefs.SetFloat("DamageM", 1);         // Sin cap
-        PlayerPrefs.SetFloat("FireRateM", 1);       // Cap 5
-        PlayerPrefs.SetInt("GoldM", 1);             // Cap 3
-        PlayerPrefs.SetInt("ExpM", 1);              // Cap 3  
-        PlayerPrefs.SetFloat("Armor", 1);           // Cap 10
+        PlayerPrefs.SetFloat("DamageM", 1);
+        PlayerPrefs.SetInt("FireRateCap", 1);
+        PlayerPrefs.SetFloat("FireRateM", 1);                  
+        PlayerPrefs.SetInt("GoldM", 1);
+        PlayerPrefs.SetInt("ExpM", 1);
+        PlayerPrefs.SetInt("ArmorCap", 1);
+        PlayerPrefs.SetFloat("Armor", 1);
     }
 
     public GameObject player;
@@ -65,6 +68,7 @@ public class Upgrades : MonoBehaviour
 
     public void Speed()
     {
+        PlayerPrefs.SetInt("SpeedM", 1 + PlayerPrefs.GetInt("SpeedM"));
         SpeedM *= 1.1f;
         player.GetComponent<FirstPersonController>().ChangeSpeed(SpeedM);
     }
@@ -86,6 +90,7 @@ public class Upgrades : MonoBehaviour
 
     public void FireRate()
     {
+        PlayerPrefs.SetInt("FireRateCap", PlayerPrefs.GetInt("FireRateCap")+1);
         PlayerPrefs.SetFloat("FireRateM", PlayerPrefs.GetFloat("FireRateM")*0.9f);
     }
 
@@ -111,6 +116,7 @@ public class Upgrades : MonoBehaviour
 
     public void Armor()
     {
+        PlayerPrefs.SetInt("ArmorCap", PlayerPrefs.GetInt("ArmorCap")+1);
         PlayerPrefs.SetFloat("Armor", PlayerPrefs.GetFloat("Armor")*0.75f);
     }
 }
