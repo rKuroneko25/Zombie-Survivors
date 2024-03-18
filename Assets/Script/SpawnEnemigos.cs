@@ -40,7 +40,7 @@ public class SpawnEnemigos : MonoBehaviour
             if(enemies == total + 10*PlayerPrefs.GetInt("Ronda")){
                 total = enemies;
                 TEE*=0.9f;
-                PlayerPrefs.SetFloat("VidaEnemigos", PlayerPrefs.GetFloat("VidaEnemigos")*1.15f);
+                PlayerPrefs.SetFloat("VidaEnemigos", PlayerPrefs.GetFloat("VidaEnemigos")*1.5f);
                 PlayerPrefs.SetInt("Ronda", PlayerPrefs.GetInt("Ronda")+1);
                 RondaText.text = "Ronda: "+PlayerPrefs.GetInt("Ronda").ToString();
             }
@@ -67,6 +67,6 @@ public class SpawnEnemigos : MonoBehaviour
     public void Exp(){
         int puntos = Random.Range(1, 4);
         PlayerPrefs.SetInt("Exp", PlayerPrefs.GetInt("Exp")+puntos*PlayerPrefs.GetInt("ExpM"));
-        ExpBar.GetComponent<UnityEngine.UI.Image>().fillAmount = (float)PlayerPrefs.GetInt("Exp")/(10*PlayerPrefs.GetInt("Ronda"));
+        ExpBar.GetComponent<UnityEngine.UI.Image>().fillAmount = (float)PlayerPrefs.GetInt("Exp")/(10*(1+PlayerPrefs.GetInt("Level")));
     }
 }

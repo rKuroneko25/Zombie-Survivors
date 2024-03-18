@@ -61,27 +61,27 @@ public class GUIUpgrades : MonoBehaviour
         
         List<string> mejorasDisponiblesCopia = new List<string>(mejorasDisponibles);
 
-        if (PlayerPrefs.GetInt("SpeedM") == 5)
+        if (PlayerPrefs.GetInt("SpeedM") == 6)
         {
             mejorasDisponiblesCopia.Remove("SpeedUp");
         }
 
-        if (PlayerPrefs.GetInt("FireRateCap") == 5)
+        if (PlayerPrefs.GetInt("FireRateCap") == 6)
         {
             mejorasDisponiblesCopia.Remove("FireRateUp");
         }
 
-        if (PlayerPrefs.GetInt("GoldM") == 3)
+        if (PlayerPrefs.GetInt("GoldMCap") == 4)
         {
             mejorasDisponiblesCopia.Remove("MoreGold");
         }
 
-        if (PlayerPrefs.GetInt("ExpM") == 3)
+        if (PlayerPrefs.GetInt("ExpMCap") == 4)
         {
             mejorasDisponiblesCopia.Remove("MoreExp");
         }
 
-        if (PlayerPrefs.GetInt("ArmorCap") == 10)
+        if (PlayerPrefs.GetInt("ArmorCap") == 11)
         {
             mejorasDisponiblesCopia.Remove("ArmorUp");
         }
