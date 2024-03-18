@@ -1024,8 +1024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5, y: -58.3}
-  m_SizeDelta: {x: 68.497, y: 24.6938}
+  m_AnchoredPosition: {x: 7.0084, y: -58.3}
+  m_SizeDelta: {x: 69.5138, y: 24.6938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193066520
 MonoBehaviour:
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500 Gold
+  m_Text: 1000 Gold
 --- !u!222 &193066521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1299,8 +1299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -232, y: -82}
-  m_SizeDelta: {x: 313.1711, y: 81.7188}
+  m_AnchoredPosition: {x: -239, y: -82}
+  m_SizeDelta: {x: 336.476, y: 81.7188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221532916
 MonoBehaviour:
@@ -1335,7 +1335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GOLD: XXXX'
+  m_Text: 'GOLD: XXXXX'
 --- !u!222 &221532917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2256,8 +2256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -53}
-  m_SizeDelta: {x: 60.1997, y: 21.024}
+  m_AnchoredPosition: {x: -2.5123, y: -53}
+  m_SizeDelta: {x: 67.175, y: 21.024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422669114
 MonoBehaviour:
@@ -2292,7 +2292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50 Gold
+  m_Text: 200 Gold
 --- !u!222 &422669115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3457,7 +3457,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 25 Gold
+  m_Text: 75 Gold
 --- !u!222 &784296233
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4485,8 +4485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.2, y: -43.2}
-  m_SizeDelta: {x: 63.8534, y: 21.024}
+  m_AnchoredPosition: {x: -1.2435, y: -43.2}
+  m_SizeDelta: {x: 69.7664, y: 21.024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080223020
 MonoBehaviour:
@@ -4521,7 +4521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100 Gold
+  m_Text: 1000 Gold
 --- !u!222 &1080223021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6286,7 +6286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 208.20001, y: -282.6}
+  m_AnchoredPosition: {x: 195, y: -282.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428663990
@@ -6309,7 +6309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XXXX Gold
+  m_text: XXXXX Gold
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7402,7 +7402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 250 Gold
+  m_Text: 5000 Gold
 --- !u!222 &1584416743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7445,7 +7445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.1, y: -270.4}
+  m_AnchoredPosition: {x: 75, y: -270.4}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595226548
