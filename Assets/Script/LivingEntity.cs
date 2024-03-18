@@ -39,7 +39,8 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage){
         if(gameObject.name == "Player"){
-            playerHealth.GetComponent<Image>().fillAmount = (vidaActual-damage*PlayerPrefs.GetFloat("Armor"))/vidaInicial;        
+            playerHealth.GetComponent<Image>().fillAmount = (vidaActual-damage*PlayerPrefs.GetFloat("Armor"))/vidaInicial;       
+            FindObjectOfType<AudioManager>().Play("Damage"); 
         }
         else{
             transform.GetChild(0).GetComponent<TextMeshPro>().text = "HP: "+(vidaActual-damage).ToString();

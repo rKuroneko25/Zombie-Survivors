@@ -20,7 +20,7 @@ public class Bala : MonoBehaviour
                     damage = 1;
                     break;
                 case "UZI":
-                    damage = 0.5f;
+                    damage = 1f;
                     break;
                 case "M4":
                     damage = 2f;

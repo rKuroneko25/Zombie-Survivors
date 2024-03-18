@@ -23,7 +23,7 @@ public class Upgrades : MonoBehaviour
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
-        PlayerPrefs.SetInt("Exp", 0);
+        PlayerPrefs.SetInt("Exp", 10);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
         PlayerPrefs.SetInt("GoldM", 1);
@@ -40,7 +40,7 @@ public class Upgrades : MonoBehaviour
 
             LevelText.text = Level.ToString();
 
-            UpgradeTime.LevelUp();
+            //UpgradeTime.LevelUp();
 
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;
@@ -73,7 +73,7 @@ public class Upgrades : MonoBehaviour
 
     public void Damage()
     {
-        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")*1.2f);
+        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")*1.5f);
     }
 
     public void FireRate()
@@ -83,12 +83,12 @@ public class Upgrades : MonoBehaviour
 
     public void InstaKill()
     {
-        PlayerPrefs.SetInt("DamageM", PlayerPrefs.GetInt("DamageM")*1000);
-        Invoke("NoInstaKill", 10.0f); 
+        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")*10000);
+        Invoke("NoInstaKill", 20.0f); 
     }
     void NoInstaKill()
     {
-        PlayerPrefs.SetInt("DamageM", PlayerPrefs.GetInt("DamageM")/1000);
+        PlayerPrefs.SetFloat("DamageM", PlayerPrefs.GetFloat("DamageM")/10000);
     }
 
     public void Gold()
@@ -103,6 +103,6 @@ public class Upgrades : MonoBehaviour
 
     public void Armor()
     {
-        PlayerPrefs.SetFloat("Armor", PlayerPrefs.GetFloat("Armor")*0.9f);
+        PlayerPrefs.SetFloat("Armor", PlayerPrefs.GetFloat("Armor")*0.75f);
     }
 }

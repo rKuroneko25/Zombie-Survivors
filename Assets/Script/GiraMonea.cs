@@ -8,8 +8,11 @@ public class GiraMonea : MonoBehaviour
     private float rotationSpeed;
     private AudioSource audioSource;
 
+    bool cogiendo;
+
     void Start()
     {
+        cogiendo = false;
         audioSource = GetComponent<AudioSource>();
         rotationSpeed = 50f;
         Invoke("DestruyeMonea", 10f);
@@ -23,11 +26,14 @@ public class GiraMonea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            audioSource.Play();
-            PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro")*PlayerPrefs.GetInt("GoldM"));
-            Invoke("DestruyeMonea", 1f);
+        if(!cogiendo){
+            if (other.CompareTag("Player"))
+            {
+                cogiendo = true;
+                audioSource.Play();
+                PlayerPrefs.SetInt("Oro", PlayerPrefs.GetInt("Oro")+1*PlayerPrefs.GetInt("GoldM"));
+                Invoke("DestruyeMonea", 1f);
+            }
         }
     }
 
