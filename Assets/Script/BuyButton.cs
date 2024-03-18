@@ -49,7 +49,7 @@ public class BuyButton : MonoBehaviour
                 ComprarArma(5000,comprada);
                 break;
             case "RPG":
-                ComprarArma(9999,comprada);
+                ComprarArma(10000,comprada);
                 break;
             default:
                 break;

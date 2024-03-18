@@ -33,8 +33,8 @@ public class Upgrades : MonoBehaviour
         PlayerPrefs.SetInt("Oro", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetInt("FireRateCap", 1);
-        PlayerPrefs.SetFloat("FireRateM", 1);  
-        PlayerPrefs.SetInt("GoldMCap", 1);                
+        PlayerPrefs.SetFloat("FireRateM", 1);   
+        PlayerPrefs.SetInt("GoldMCap", 1);               
         PlayerPrefs.SetInt("GoldM", 1);
         PlayerPrefs.SetInt("ExpMCap", 1);
         PlayerPrefs.SetInt("ExpM", 1);
