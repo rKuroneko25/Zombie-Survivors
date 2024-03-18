@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class GoldEvent : UnityEvent<Vector3> { }
@@ -65,6 +66,8 @@ public class LivingEntity : MonoBehaviour, IDamageable
             if(onDeathPlayer != null)
             {
                 onDeathPlayer();
+                SceneManager.LoadScene("GameOver");
+                FindObjectOfType<AudioManager>().Stop("Playing");
             }
             Destroy(gameObject);
         } else {

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 
 public class SpawnEnemigos : MonoBehaviour
@@ -50,6 +52,11 @@ public class SpawnEnemigos : MonoBehaviour
             enemy.GetComponent<LivingEntity>().EnemyExp.AddListener(Exp);
             enemy.GetComponent<LivingEntity>().EnemyGold.AddListener(Gold);
             enemies++;
+        }
+
+        if(PlayerPrefs.GetInt("Ronda") == 10){
+            AudioManager.instance.Stop("Playing");
+            SceneManager.LoadScene("WinScreen");
         }
     }
 
