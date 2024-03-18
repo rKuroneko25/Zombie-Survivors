@@ -447,6 +447,7 @@ MonoBehaviour:
   GUIPlaying: {fileID: 1193790936}
   GUIUpgrade: {fileID: 1704332487}
   UpgradeTime: {fileID: 1704332489}
+  LevelBar: {fileID: 1135432939}
   player: {fileID: 371271104}
 --- !u!4 &78439655
 Transform:
@@ -7914,7 +7915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1704332488
 RectTransform:
   m_ObjectHideFlags: 0

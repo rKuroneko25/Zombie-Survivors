@@ -16,6 +16,7 @@ public class Upgrades : MonoBehaviour
     public GameObject GUIPlaying;
     public GameObject GUIUpgrade;
     public GUIUpgrades UpgradeTime;
+    public GameObject LevelBar;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,16 @@ public class Upgrades : MonoBehaviour
         AudioManager.instance.Play("Playing");
         Level = 0;
         SpeedM = 1;
+        PlayerPrefs.SetInt("SpeedM", 1);
         HeathM = 1;
         PlayerPrefs.SetString("DesactivaMarcado", "False");
         PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetInt("Oro", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
-        PlayerPrefs.SetFloat("FireRateM", 1);
-        PlayerPrefs.SetInt("GoldM", 1);
-        PlayerPrefs.SetInt("ExpM", 1);
+        PlayerPrefs.SetInt("FireRateCap", 1);
+        PlayerPrefs.SetFloat("FireRateM", 1);                  
+        PlayerPrefs.SetInt("GoldM", 0);
+        PlayerPrefs.SetInt("ExpM", 0);
         PlayerPrefs.SetFloat("Armor", 1);
     }
 
@@ -43,7 +46,7 @@ public class Upgrades : MonoBehaviour
 
             LevelText.text = Level.ToString();
             FindObjectOfType<AudioManager>().Play("LevelUp");
-            GUIPlaying.transform.GetChild(1).GetComponent<Image>().fillAmount = 0;
+            LevelBar.GetComponent<Image>().fillAmount = 0;
     
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;
@@ -62,6 +65,7 @@ public class Upgrades : MonoBehaviour
 
     public void Speed()
     {
+        PlayerPrefs.SetInt("SpeedM", 1 + PlayerPrefs.GetInt("SpeedM"));
         SpeedM *= 1.1f;
         player.GetComponent<FirstPersonController>().ChangeSpeed(SpeedM);
     }
@@ -83,6 +87,7 @@ public class Upgrades : MonoBehaviour
 
     public void FireRate()
     {
+        PlayerPrefs.SetInt("FireRateCap", PlayerPrefs.GetInt("FireRateCap")+1);
         PlayerPrefs.SetFloat("FireRateM", PlayerPrefs.GetFloat("FireRateM")*0.9f);
     }
 
