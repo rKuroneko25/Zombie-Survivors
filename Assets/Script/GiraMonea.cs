@@ -16,7 +16,7 @@ public class GiraMonea : MonoBehaviour
         cogiendo = false;
         audioSource = GetComponent<AudioSource>();
         rotationSpeed = 50f;
-        Invoke("DestruyeMonea", 10f);
+        Invoke("DestruyeMonea", 30f);
     }
 
 

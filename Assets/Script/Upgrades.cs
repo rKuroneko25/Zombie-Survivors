@@ -23,8 +23,8 @@ public class Upgrades : MonoBehaviour
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
-        PlayerPrefs.SetInt("Exp", 10);
-        PlayerPrefs.SetInt("Exp", 10);
+        PlayerPrefs.SetInt("Exp", 0);
+        PlayerPrefs.SetInt("Oro", 0);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
         PlayerPrefs.SetInt("GoldM", 1);
@@ -40,7 +40,8 @@ public class Upgrades : MonoBehaviour
             PlayerPrefs.SetInt("Exp", 0);
 
             LevelText.text = Level.ToString();
-
+            FindObjectOfType<AudioManager>().Play("LevelUp");
+            GUIPlaying.transform.GetChild(1).GetComponent<Image>().fillAmount = 0;
     
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;

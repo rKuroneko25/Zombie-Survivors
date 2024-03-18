@@ -4320,6 +4320,21 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.551
     loop: 0
+  - name: EnemyHurt
+    clip: {fileID: 8300000, guid: 5e136fb8c09e2e747a4078b8232d5a02, type: 3}
+    source: {fileID: 0}
+    volume: 0.551
+    loop: 0
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 45669c769626b4f4098438bf0856725b, type: 3}
+    source: {fileID: 0}
+    volume: 0.551
+    loop: 0
+  - name: LevelUp
+    clip: {fileID: 8300000, guid: 05cca0afafd75634eb944d7391c13709, type: 3}
+    source: {fileID: 0}
+    volume: 0.519
+    loop: 0
 --- !u!4 &1023681926
 Transform:
   m_ObjectHideFlags: 0
@@ -7936,6 +7951,8 @@ MonoBehaviour:
   - MoreGold
   - ArmorUp
   - Heal
+  sprites: []
+  upgrades: []
 --- !u!114 &1704332490
 MonoBehaviour:
   m_ObjectHideFlags: 0

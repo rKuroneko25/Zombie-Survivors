@@ -44,6 +44,12 @@ public class LivingEntity : MonoBehaviour, IDamageable
         }
         else{
             transform.GetChild(0).GetComponent<TextMeshPro>().text = "HP: "+(vidaActual-damage).ToString();
+            if(vidaActual-damage <= 0 && !muerto){
+                FindObjectOfType<AudioManager>().Play("EnemyDeath");
+            }
+            else{
+                FindObjectOfType<AudioManager>().Play("EnemyHurt");
+            }
         }
         vidaActual -= damage;
         if(vidaActual <= 0 && !muerto){
@@ -60,11 +66,18 @@ public class LivingEntity : MonoBehaviour, IDamageable
             {
                 onDeathPlayer();
             }
+            Destroy(gameObject);
         } else {
+            transform.GetChild(1).GetComponent<Animator>().SetTrigger("Death");
             EnemyExp.Invoke();
             EnemyGold.Invoke(transform.position);
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            GetComponent<CapsuleCollider>().enabled = false;
+            Invoke("morir", 1.5f);
         }
-        
+    }
+
+    void morir(){
         Destroy(gameObject);
     }
 

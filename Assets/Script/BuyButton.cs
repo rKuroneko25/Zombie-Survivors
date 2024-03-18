@@ -13,7 +13,6 @@ public class BuyButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //PlayerPrefs.SetInt("Oro",6000); ////////////////////////////BORRAR
         oro.text = "GOLD: " + PlayerPrefs.GetInt("Oro").ToString();
         gui = GameObject.Find("GUI");
         audioSource = GetComponent<AudioSource>();

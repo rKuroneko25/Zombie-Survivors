@@ -65,6 +65,8 @@ public class NewBehaviourScript : LivingEntity
                         atacando = true;
 
                         Debug.Log("Atacando");
+                        FindObjectOfType<AudioManager>().Play("EnemyAttack");
+                        transform.GetChild(1).GetComponent<Animator>().SetTrigger("Attack");
 
                         nextAttackTime = Time.time + tiempoEntreAtaques;
                         Invoke("Atacar", 1f);
@@ -76,7 +78,7 @@ public class NewBehaviourScript : LivingEntity
 
     void Atacar()
     {
-
+        
         if(sqrDsttoTarget <= 20f){
             agent.enabled = false;
             
@@ -86,6 +88,7 @@ public class NewBehaviourScript : LivingEntity
             agent.enabled = true;
         }  
         atacando = false;
+        transform.GetChild(1).GetComponent<Animator>().SetTrigger("Walk");
     }
 
 
