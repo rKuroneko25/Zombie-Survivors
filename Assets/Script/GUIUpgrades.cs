@@ -34,6 +34,21 @@ public class GUIUpgrades : MonoBehaviour
         rightImage.sprite = ObtenerSpriteDeMejora(mejoras[2]);
     }
 
+    public void LevelUp(){
+        BTUpgrade.gameObject.SetActive(false);
+        
+        List<string> mejoras = ObtenerMejorasAleatorias();
+
+        leftText.text = mejoras[0];
+        leftImage.sprite = ObtenerSpriteDeMejora(mejoras[0]);
+
+        middleText.text = mejoras[1];
+        middleImage.sprite = ObtenerSpriteDeMejora(mejoras[1]);
+
+        rightText.text = mejoras[2];
+        rightImage.sprite = ObtenerSpriteDeMejora(mejoras[2]);
+    }
+
     public List<string> ObtenerMejorasAleatorias()
     {
         List<string> mejorasSeleccionadas = new List<string>();
