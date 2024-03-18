@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 [System.Serializable]
 public class GoldEvent : UnityEvent<Vector3> { }
@@ -69,6 +70,11 @@ public class LivingEntity : MonoBehaviour, IDamageable
                 SceneManager.LoadScene("GameOver");
                 FindObjectOfType<AudioManager>().Stop("Playing");
             }
+
+            GetComponent<FirstPersonController>().enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             Destroy(gameObject);
         } else {
             transform.GetChild(1).GetComponent<Animator>().SetTrigger("Death");

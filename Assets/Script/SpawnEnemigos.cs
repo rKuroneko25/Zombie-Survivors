@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 public class SpawnEnemigos : MonoBehaviour
@@ -20,6 +21,7 @@ public class SpawnEnemigos : MonoBehaviour
     int total;
     public GameObject ExpBar;
     public TextMeshProUGUI RondaText;
+    public FirstPersonController Player;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,11 @@ public class SpawnEnemigos : MonoBehaviour
 
         if(PlayerPrefs.GetInt("Ronda") == 10){
             AudioManager.instance.Stop("Playing");
+
+            Player.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             SceneManager.LoadScene("WinScreen");
         }
     }
