@@ -15,6 +15,13 @@ public class SeleccionadorDeImagen : MonoBehaviour
         }
     }
 
+    void Update() {
+        if (PlayerPrefs.GetString("DesactivaMarcado") == "True") {
+            PlayerPrefs.SetString("DesactivaMarcado", "False");
+            imagenSeleccionada.color = Color.white;
+        }
+    }
+
     void SeleccionarImagen(Image imagen)
     {
         BTUpgrade.gameObject.SetActive(true);

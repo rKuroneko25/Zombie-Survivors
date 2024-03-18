@@ -18,6 +18,9 @@ public class ExitShopButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        AudioManager.instance.Play("ShopEnter");
+        AudioManager.instance.Stop("Shop");
+        AudioManager.instance.UnPause("Playing");
         //reanudar el juego
         Time.timeScale = 1;
             

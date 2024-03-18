@@ -20,9 +20,11 @@ public class Upgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.Play("Playing");
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
+        PlayerPrefs.SetString("DesactivaMarcado", "False");
         PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetInt("Oro", 0);
         PlayerPrefs.SetFloat("DamageM", 1);

@@ -20,6 +20,7 @@ public class UpgradeButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        AudioManager.instance.Play("NewUpgrade");
         Debug.Log("Mejora seleccionada: " + PlayerPrefs.GetString("MejoraSeleccionada"));
         switch (PlayerPrefs.GetString("MejoraSeleccionada"))
         {
@@ -65,6 +66,7 @@ public class UpgradeButton : MonoBehaviour
 
         GUIPlaying.SetActive(true);
         GUIUpgrade.SetActive(false);
+        PlayerPrefs.SetString("DesactivaMarcado", "True");
     }
 
     void SonidoArma()
