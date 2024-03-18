@@ -81,6 +81,11 @@ public class GUIUpgrades : MonoBehaviour
             mejorasDisponiblesCopia.Remove("MoreExp");
         }
 
+        if (PlayerPrefs.GetInt("ArmorCap") == 10)
+        {
+            mejorasDisponiblesCopia.Remove("ArmorUp");
+        }
+
         for (int i = 0; i < 3; i++)
         {
             int indiceAleatorio = Random.Range(0, mejorasDisponiblesCopia.Count);
