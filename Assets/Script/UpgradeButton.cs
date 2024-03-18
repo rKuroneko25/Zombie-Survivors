@@ -65,6 +65,7 @@ public class UpgradeButton : MonoBehaviour
 
         GUIPlaying.SetActive(true);
         GUIUpgrade.SetActive(false);
+        PlayerPrefs.SetString("DesactivaMarcado", "True");
     }
 
     void SonidoArma()

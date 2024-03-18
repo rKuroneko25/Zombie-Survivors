@@ -23,7 +23,7 @@ public class Upgrades : MonoBehaviour
         Level = 0;
         SpeedM = 1;
         HeathM = 1;
-        PlayerPrefs.SetInt("Exp", 10);
+        PlayerPrefs.SetString("DesactivaMarcado", "False");
         PlayerPrefs.SetInt("Exp", 10);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
