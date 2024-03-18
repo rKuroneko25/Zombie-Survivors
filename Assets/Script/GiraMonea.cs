@@ -13,6 +13,7 @@ public class GiraMonea : MonoBehaviour
     void Start()
     {
         cogiendo = false;
+        cogiendo = false;
         audioSource = GetComponent<AudioSource>();
         rotationSpeed = 50f;
         Invoke("DestruyeMonea", 10f);

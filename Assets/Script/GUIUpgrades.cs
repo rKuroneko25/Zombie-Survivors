@@ -11,30 +11,36 @@ public class GUIUpgrades : MonoBehaviour
     public Image rightImage;
     public Text rightText;
     public Button BTUpgrade;
+    private bool lleno;
 
     public Dictionary<string, Sprite> diccionarioSprites = new Dictionary<string, Sprite>();
 
     public List<string> mejorasDisponibles = new List<string>{"SpeedUp", "HealthUp", "DamageUp", "FireRateUp", "Instakill", "MoreExp", "MoreGold", "ArmorUp", "Heal"};
 
+    public List<Sprite> sprites;
+    public List<string> upgrades;
+
     void Start()
     {
-        BTUpgrade.gameObject.SetActive(false);
+        lleno = false;
+        // BTUpgrade.gameObject.SetActive(false);
 
-        LlenarDiccionarioSprites();
+        //LlenarDiccionarioSprites();
 
-        List<string> mejoras = ObtenerMejorasAleatorias();
+        // List<string> mejoras = ObtenerMejorasAleatorias();
 
-        leftText.text = mejoras[0];
-        leftImage.sprite = ObtenerSpriteDeMejora(mejoras[0]);
+        // leftText.text = mejoras[0];
+        // leftImage.sprite = ObtenerSpriteDeMejora(mejoras[0]);
 
-        middleText.text = mejoras[1];
-        middleImage.sprite = ObtenerSpriteDeMejora(mejoras[1]);
+        // middleText.text = mejoras[1];
+        // middleImage.sprite = ObtenerSpriteDeMejora(mejoras[1]);
 
-        rightText.text = mejoras[2];
-        rightImage.sprite = ObtenerSpriteDeMejora(mejoras[2]);
+        // rightText.text = mejoras[2];
+        // rightImage.sprite = ObtenerSpriteDeMejora(mejoras[2]);
     }
 
     public void LevelUp(){
+        LlenarDiccionarioSprites();
         BTUpgrade.gameObject.SetActive(false);
         
         List<string> mejoras = ObtenerMejorasAleatorias();
@@ -72,14 +78,18 @@ public class GUIUpgrades : MonoBehaviour
 
     void LlenarDiccionarioSprites()
     {
-        diccionarioSprites.Add("SpeedUp", Resources.Load<Sprite>("SpeedUp"));
-        diccionarioSprites.Add("HealthUp", Resources.Load<Sprite>("HealthUp"));
-        diccionarioSprites.Add("DamageUp", Resources.Load<Sprite>("DamageUp"));
-        diccionarioSprites.Add("FireRateUp", Resources.Load<Sprite>("FireRateUp"));
-        diccionarioSprites.Add("Instakill", Resources.Load<Sprite>("Instakill"));
-        diccionarioSprites.Add("MoreExp", Resources.Load<Sprite>("MoreExp"));
-        diccionarioSprites.Add("MoreGold", Resources.Load<Sprite>("MoreGold"));
-        diccionarioSprites.Add("ArmorUp", Resources.Load<Sprite>("ArmorUp"));
-        diccionarioSprites.Add("Heal", Resources.Load<Sprite>("Heal"));
+        if (!lleno){
+            lleno = true;
+            diccionarioSprites.Add("SpeedUp", Resources.Load<Sprite>("SpeedUp"));
+            diccionarioSprites.Add("HealthUp", Resources.Load<Sprite>("HealthUp"));
+            diccionarioSprites.Add("DamageUp", Resources.Load<Sprite>("DamageUp"));
+            diccionarioSprites.Add("FireRateUp", Resources.Load<Sprite>("FireRateUp"));
+            diccionarioSprites.Add("Instakill", Resources.Load<Sprite>("Instakill"));
+            diccionarioSprites.Add("MoreExp", Resources.Load<Sprite>("MoreExp"));
+            diccionarioSprites.Add("MoreGold", Resources.Load<Sprite>("MoreGold"));
+            diccionarioSprites.Add("ArmorUp", Resources.Load<Sprite>("ArmorUp"));
+            diccionarioSprites.Add("Heal", Resources.Load<Sprite>("Heal"));
+        }
+
     }
 }

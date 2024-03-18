@@ -24,6 +24,7 @@ public class Upgrades : MonoBehaviour
         SpeedM = 1;
         HeathM = 1;
         PlayerPrefs.SetInt("Exp", 10);
+        PlayerPrefs.SetInt("Exp", 10);
         PlayerPrefs.SetFloat("DamageM", 1);
         PlayerPrefs.SetFloat("FireRateM", 1);
         PlayerPrefs.SetInt("GoldM", 1);
@@ -40,8 +41,7 @@ public class Upgrades : MonoBehaviour
 
             LevelText.text = Level.ToString();
 
-            //UpgradeTime.LevelUp();
-
+    
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;
 
@@ -52,6 +52,8 @@ public class Upgrades : MonoBehaviour
 
             GUIPlaying.SetActive(false);
             GUIUpgrade.SetActive(true);
+
+            UpgradeTime.LevelUp();
         }
     }
 

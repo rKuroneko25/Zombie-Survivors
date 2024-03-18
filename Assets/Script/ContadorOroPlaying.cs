@@ -8,11 +8,11 @@ public class ContadorOroPlaying : MonoBehaviour
 
     void Start()
     {
-        textoOro.text = PlayerPrefs.GetInt("Oro").ToString() + "Gold";
+        textoOro.text = PlayerPrefs.GetInt("Oro").ToString() + " Gold";
     }
 
     void Update()
     {
-        textoOro.text = PlayerPrefs.GetInt("Oro").ToString() + "Gold";
+        textoOro.text = PlayerPrefs.GetInt("Oro").ToString() + " Gold";
     }
 }
