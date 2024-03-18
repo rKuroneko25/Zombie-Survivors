@@ -73,6 +73,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
             EnemyGold.Invoke(transform.position);
             GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             GetComponent<CapsuleCollider>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
             Invoke("morir", 1.5f);
         }
     }

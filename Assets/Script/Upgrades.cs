@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class Upgrades : MonoBehaviour
 {
@@ -17,21 +18,23 @@ public class Upgrades : MonoBehaviour
     public GameObject GUIUpgrade;
     public GUIUpgrades UpgradeTime;
 
+    public GameObject LevelBar;
+
     // Start is called before the first frame update
     void Start()
     {
         AudioManager.instance.Play("Playing");
         Level = 0;
-        SpeedM = 1;
-        HeathM = 1;
+        SpeedM = 1;                                 // Cap 5
+        HeathM = 1;                                 // Sin cap
         PlayerPrefs.SetString("DesactivaMarcado", "False");
         PlayerPrefs.SetInt("Exp", 0);
         PlayerPrefs.SetInt("Oro", 0);
-        PlayerPrefs.SetFloat("DamageM", 1);
-        PlayerPrefs.SetFloat("FireRateM", 1);
-        PlayerPrefs.SetInt("GoldM", 1);
-        PlayerPrefs.SetInt("ExpM", 1);
-        PlayerPrefs.SetFloat("Armor", 1);
+        PlayerPrefs.SetFloat("DamageM", 1);         // Sin cap
+        PlayerPrefs.SetFloat("FireRateM", 1);       // Cap 5
+        PlayerPrefs.SetInt("GoldM", 1);             // Cap 3
+        PlayerPrefs.SetInt("ExpM", 1);              // Cap 3  
+        PlayerPrefs.SetFloat("Armor", 1);           // Cap 10
     }
 
     public GameObject player;
@@ -43,7 +46,7 @@ public class Upgrades : MonoBehaviour
 
             LevelText.text = Level.ToString();
             FindObjectOfType<AudioManager>().Play("LevelUp");
-            GUIPlaying.transform.GetChild(1).GetComponent<Image>().fillAmount = 0;
+            LevelBar.GetComponent<UnityEngine.UI.Image>().fillAmount = 0;
     
             Time.timeScale = 0;
             player.GetComponent<FirstPersonController>().enabled = false;

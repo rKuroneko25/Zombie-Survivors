@@ -4,6 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class SpawnEnemigos : MonoBehaviour
@@ -14,12 +15,15 @@ public class SpawnEnemigos : MonoBehaviour
     float TEE;
     public GameObject orito;
     int enemies;
+    int total;
     public GameObject ExpBar;
+    public TextMeshProUGUI RondaText;
 
     // Start is called before the first frame update
     void Start()
     {
         enemies = 1;
+        total = 1;
         tiempoEntreEnemigosActual = 5;
         TEE = 5;
         PlayerPrefs.SetFloat("VidaEnemigos", 10);
@@ -33,10 +37,12 @@ public class SpawnEnemigos : MonoBehaviour
         
         if (tiempoEntreEnemigosActual <= 0)
         {
-            if(enemies%10 == 0){
+            if(enemies == total + 10*PlayerPrefs.GetInt("Ronda")){
+                total = enemies;
                 TEE*=0.9f;
                 PlayerPrefs.SetFloat("VidaEnemigos", PlayerPrefs.GetFloat("VidaEnemigos")*1.15f);
                 PlayerPrefs.SetInt("Ronda", PlayerPrefs.GetInt("Ronda")+1);
+                RondaText.text = "Ronda: "+PlayerPrefs.GetInt("Ronda").ToString();
             }
             tiempoEntreEnemigosActual = TEE;
             int posicion = Random.Range(0, 4);

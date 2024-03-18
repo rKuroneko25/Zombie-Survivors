@@ -29,10 +29,10 @@ public class Bala : MonoBehaviour
                     damage = 5f;
                     break;
                 case "SHOTGUN":
-                    damage = 4f;
+                    damage = 8f;
                     break;
                 case "GATLING":
-                    damage = 3f;
+                    damage = 5f;
                     break;
                 case "RPG":
                     damage = 100f;
